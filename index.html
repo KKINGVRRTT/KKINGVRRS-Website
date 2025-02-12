@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKINGVRR</title>
+    <link href = "mainStyle.css" rel = "stylesheet">
+    <link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button onclick="showLogin()" >Admin Login</button>
+        <a href="https://discord.gg/Huzdw2Kjbj" target="_blank">Join Discord</a>
+        <a href="https://www.tiktok.com/@.kinsigma" target="_blank">Tiktok</a>
+        <a href="https://www.youtube.com" target="_blank">Youtube</a>
+        <a href="mailto:" target="_blank">Contact me</a>
+        <a href="mailto:krivigant33@gmail.com" target="_blank">Contact 2nd Dev</a>
+        <div style="position: absolute; bottom: 0; width: 100%;">
+            <img src="Assets/pfp bg template.pngahhhhhhhhhh.png" width="150px">
+            <img src="Assets/download.png" width="150px">
+        </div>
+        
+    </div>
+
+    
+
+    <!-- Main content -->
+    <div class="mainContent">
+        <h1>KKINGVRR</h1>
+
+        <p id = "paragraphs">KKINGVRR is a popular TikToker with over 12K followers. He is known for his Gorilla Tag gameplay on VR, creating engaging content for gamers, streamers, and content creators. Join our Discord server to connect with other members, participate in events, and more!</p>
+        <p id = "paragraphs">This Website was made by <b>KKINGVRR</b> and by 2nd web dev <b>LaDoodleInTheHat.</b></p>
+    
+        <!-- Admin panel (hidden by default) -->
+        <div id="adminPanel">
+            <h2 id = "txt">Welcome, Admin!</h2>
+            <p id = "txt">DO NOT SHARE THIS PASSWORD if ur pass word was leaked dm king and :</p>
+            <p id = "txt">Send a message to Discord:</p>
+
+            <!-- Discord Webhook Sender -->
+            <div class="webhook-box">
+                <input type="text" id="discordMessage" placeholder="Enter message...">
+                <button onclick="sendToDiscord()">Send</button>
+                <p id="webhookStatus"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin login box -->
+    
+    <div class="admin-login" id="adminLogin">
+        <p>Enter Admin Password:</p>
+        <p id="errorMessage" style="color: red;"></p>
+        <button onclick="checkAdmin()">Login</button>
+        <button onclick="document.getElementById('adminLogin').style.display = 'none'">Close</button>
+        <input type="password" id="adminPassword">
+    </div>
+    
+    <script>
+        function showLogin() {
+            document.getElementById("adminLogin").style.display = "block";
+        }
+
+        function checkAdmin() {
+            var password = document.getElementById("adminPassword").value;
+            if (password === "101112") { // king password
+                document.getElementById("adminLogin").style.display = "none"; // Hide login box
+                document.getElementById("adminPanel").style.display = "block"; // Show admin panel
+            } else {
+                document.getElementById("errorMessage").innerText = "Incorrect password!";
+            }
+            if (password === "912") { // mod password
+                document.getElementById("adminLogin").style.display = "none"; // Hide login box
+                document.getElementById("adminPanel").style.display = "block"; // Show admin panel
+            } else {
+                document.getElementById("errorMessage").innerText = "Incorrect password!";
+            }
+            if (password === "69420") { // Krivi pass
+                document.getElementById("adminLogin").style.display = "none"; // Hide login box
+                document.getElementById("adminPanel").style.display = "block"; // Show admin panel
+            } else {
+                document.getElementById("errorMessage").innerText = "Incorrect password!";
+            }
+        }
+
+    
+
+        function sendToDiscord() {
+            var message = document.getElementById("discordMessage").value;
+            var webhookURL = "https://discord.com/api/webhooks/1338413983765364768/BYnfCEij_evwEEJRq1fRH7mRvHWisCA_2ANcI8bojjUZMX5-A8QdZ1Xft0cuDynMvUKn";
+
+            if (message.trim() === "") {
+                document.getElementById("webhookStatus").innerText = "Message cannot be empty!";
+                return;
+            }
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ content: message })
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("webhookStatus").innerText = "Message sent!";
+                    document.getElementById("discordMessage").value = ""; // Clear input
+                } else {
+                    document.getElementById("webhookStatus").innerText = "Failed to send message.";
+                }
+            })
+            .catch(error => {
+                document.getElementById("webhookStatus").innerText = "Error: " + error;
+            });
+        }
+    </script>
+
+</body>
+</html>

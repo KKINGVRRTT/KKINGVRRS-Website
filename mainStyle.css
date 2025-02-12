@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+    background: linear-gradient(rgb(36, 36, 36), rgb(0, 50, 125)) fixed;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-family: "jetbrainsmono";
+    background-size: cover;
+}
+
+h1 {
+    font-size: 55px;
+    margin-top: 100px;
+    font-family: "daydream";
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideIn 2s forwards, bounce 2s infinite ease-in-out;
+    animation-delay: 0s, 3s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: url("Assets/thing.jpg") center/100% 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.sidebar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px auto;
+    opacity: 0;
+    transform: translateX(-200%);
+    animation: slideInFromLeft 2s forwards, bounce 2s infinite ease-in-out;
+    animation-delay: var(--animation-delay), 4s;
+    margin-bottom: 70px;
+}
+
+.sidebar img:nth-child(1) {
+    --animation-delay: 1.5s;
+}
+
+.sidebar img:nth-child(2) {
+    --animation-delay: 1.75s;
+}
+
+.sidebar button, .sidebar a {
+    display: block;
+    background: linear-gradient(rgb(31, 31, 31) 20%, rgb(0, 50, 125) 80%);
+    color: white;
+    padding: 10px;
+    margin: 10px auto; /* Center the buttons and links */
+    border: none;
+    cursor: pointer;
+    width: calc(100% - 40px); /* Adjusted width to ensure consistent size */
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "daydream";
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    opacity: 0;
+    transform: translateX(-200%);
+    animation: slideInFromLeft 1s forwards; /* Reduced animation duration */
+    animation-delay: var(--animation-delay); /* Use CSS variable for delay */
+}
+
+.sidebar button:nth-child(1), .sidebar a:nth-child(1) {
+    --animation-delay: 0s;
+}
+
+.sidebar button:nth-child(2), .sidebar a:nth-child(2) {
+    --animation-delay: 0.25s; /* Reduced delay */
+}
+
+.sidebar button:nth-child(3), .sidebar a:nth-child(3) {
+    --animation-delay: 0.5s; /* Reduced delay */
+}
+
+.sidebar button:nth-child(4), .sidebar a:nth-child(4) {
+    --animation-delay: 0.75s; /* Reduced delay */
+}
+
+.sidebar button:nth-child(5), .sidebar a:nth-child(5) {
+    --animation-delay: 1s; /* Reduced delay */
+}
+
+.sidebar button:nth-child(6), .sidebar a:nth-child(6) {
+    --animation-delay: 1.25s; /* Reduced delay */
+}
+
+/* #buttonT button:active, #buttonT a:active {
+    transform: scale(0.95);
+    outline: none;
+} */
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sidebar button:hover, .sidebar a:hover {
+    background: rgb(83, 127, 203);
+    color: black;
+}
+
+/* .sidebar button:active, .sidebar a:active {
+    transform: scale(0.95);
+    outline: none;
+} */
+
+
+/* Main Content Styles */
+.mainContent {
+    text-align: center;
+    width: 1000px;
+    margin-left: 300px;
+}
+
+/* Text Styles */
+#txt {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#paragraphs {
+    text-align: justify;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Admin Login Styles */
+
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.admin-login {
+    display: none;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 220px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 0.5s forwards;
+}
+.admin-login {
+    display: none;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 220px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.admin-login input, .admin-login button {
+    padding: 8px;
+    margin: 5px;
+    width: 100px;
+    font-family: "jetbrainsmono";
+}
+
+.admin-login button {
+    background: black;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.admin-login button:active {
+    transform: scale(0.95);
+}
+
+.admin-login button:hover {
+    background: rgb(83, 127, 203);
+    color: black;
+}
+
+#adminPanel {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Webhook Box Styles */
+.webhook-box {
+    background: black;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.webhook-box input, .webhook-box button {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    font-family: "jetbrainsmono";
+}
+
+.webhook-box button:active {
+    transform: scale(0.95);
+}
+
+.webhook-box button {
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.webhook-box button:hover {
+    background: rgb(83, 127, 203);
+    color: black;
+}
+
+/* Font Face Definitions */
+@font-face {
+    font-family: 'daydream';
+    src: url('Assets/Fonts/Daydream.woff2') format('woff2'),
+         url('Assets/Fonts/Daydream.woff') format('woff'),
+         url('Assets/Fonts/Daydream.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'jetbrainsmono';
+    src: url('Assets/Fonts/JetBrains_Mono.woff2') format('woff2'),
+         url('Assets/Fonts/JetBrains_Mono.woff') format('woff'),
+         url('Assets/Fonts/JetBrains_Mono.ttf') format('truetype');
+}
