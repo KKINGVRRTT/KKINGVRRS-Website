@@ -1,0 +1,282 @@
+/* Font Faces */
+@font-face {font-family: 'daydream'; src:url("Assets/Fonts/Daydream.woff2");}
+@font-face {font-family: 'jetbrainsmono'; src: url("Assets/Fonts/JetBrains_Mono.woff2");}
+
+/* Body Styles */
+body {
+    background: linear-gradient(rgb(36, 36, 36), rgb(0, 50, 125)) fixed;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-family: "jetbrainsmono";
+    background-size: cover;
+}
+
+/* Main Content Styles */
+.main_content h1 {
+    font-family: 'daydream';
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 60px    ;
+    display: inline-block;
+}
+
+.main_content h1 span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: bounceIn 1.125s infinite ease-in-out;
+
+}
+
+.main_content h1 span:nth-child(1) { animation-delay: 2.1s; }
+.main_content h1 span:nth-child(2) { animation-delay: 2.2s; }
+.main_content h1 span:nth-child(3) { animation-delay: 2.3s; }
+.main_content h1 span:nth-child(4) { animation-delay: 2.4s; }
+.main_content h1 span:nth-child(5) { animation-delay: 2.5s; }
+.main_content h1 span:nth-child(6) { animation-delay: 2.6s; }
+.main_content h1 span:nth-child(7) { animation-delay: 2.7s; }
+.main_content h1 span:nth-child(8) { animation-delay: 2.8s; }
+
+.main_content p {
+    font-size: 20px;
+    color: rgb(255, 255, 255);  
+    text-align: justify;
+    margin: 20px;
+    margin-left: 240px;
+    opacity: 0;
+    transform: translateY(-100vh);
+    animation: slideInFromTop 2s forwards;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(rgb(70, 70, 70), rgb(0, 0, 0));
+    padding-top: 20px;
+}
+
+.sidebar button, .sidebar a {
+    display: block;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    background: linear-gradient(rgb(0, 111, 136), rgb(0, 0, 0));
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "daydream";
+    box-sizing: border-box;
+    border: none;
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    margin-top: auto;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+    cursor: pointer;
+}
+
+.sidebar img {
+    border-radius: 25%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+}
+
+.sidebar button:nth-child(1), .sidebar a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.sidebar button:nth-child(2), .sidebar a:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.sidebar button:nth-child(3), .sidebar a:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.sidebar button:nth-child(4), .sidebar a:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.sidebar button:nth-child(5), .sidebar a:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.sidebar img:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.sidebar img:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.sidebar button:hover, .sidebar a:hover {
+    background: linear-gradient(rgb(0, 94, 255), rgb(0, 164, 145));
+    color: black;
+}
+
+.sidebar button:active, .sidebar a:active {
+    transform: scale(0.9) !important;
+}
+
+/* Admin Login Styles */
+
+.admin-login {
+    display: none;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 220px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: "jetbrainsmono";
+}
+
+.admin-login input, .admin-login button {
+    padding: 8px;
+    margin: 5px;
+    width: 100px;
+    font-family: "jetbrainsmono";
+}
+
+.admin-login button {
+    background: black;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.admin-login button:active {
+    transform: scale(0.95);
+}
+
+.admin-login button:hover {
+    background: linear-gradient(rgb(0, 94, 255), rgb(0, 164, 145));
+    color: black;
+    font-weight: bold;
+}
+/* Admin Panel and Webhook Styles */
+
+.webhook-box {
+    background: black;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.webhook-box input, .webhook-box button {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    font-family: "jetbrainsmono";
+}
+
+.webhook-box button:active {
+    transform: scale(0.95);
+}
+
+.webhook-box button {
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.webhook-box button:hover {
+    background: linear-gradient(rgb(0, 94, 255), rgb(0, 164, 145));
+    color: black;
+    font-weight: bold;
+}
+
+.admin-panel p, .admin-panel h2 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+
+/* Keyframes */
+
+@keyframes rainbowColors {
+    0% { color: red; }
+    16.67% { color: orange; }
+    33.33% { color: yellow; }
+    50% { color: rgb(0, 255, 0); }
+    66.67% { color: rgb(0, 229, 255); }
+    83.33% { color: rgb(251, 0, 255); }
+    90% { color: rgb(255, 0, 255); }
+    100% { color: red; }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOutScale {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        /* color: rgb(0, 140, 255); */
+        opacity: 0.5;
+        transform: translateY(50%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20%);
+    }
+    /* 50% {
+        opacity: 1;
+        transform: translateY(0);
+    } */
+    100% {
+        /* color: rgb(0, 255, 0); */
+        opacity: 0.5;
+        transform: translateY(50%);
+    }
+}
