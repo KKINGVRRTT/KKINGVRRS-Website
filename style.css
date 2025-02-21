@@ -304,3 +304,7 @@ iframe {
     animation: slideIn 2s forwards 1.5s;
     transform: translateX(-200%);
 }
+
+.main-content p span{
+    animation: rainbowColors 2s infinite 2s;
+}
